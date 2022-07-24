@@ -24,13 +24,13 @@ Controllers.controller('eventsController', function($scope, $http) {
 
   $scope.update_events = function() {
     $scope.events = [];
-    $scope.update_events_worker(CPB_GoogleCalID);
-    $scope.update_events_worker(ARB_GoogleCalID);
-    $scope.update_events_worker(GIG_GoogleCalID);
-    $scope.update_events_worker(FNK_GoogleCalID);
+    $scope.update_events_worker(CPB_GoogleCalID, "ChillPoint");
+    $scope.update_events_worker(ARB_GoogleCalID, "Roosters");
+    $scope.update_events_worker(GIG_GoogleCalID, "friends");
+    $scope.update_events_worker(FNK_GoogleCalID, "Funklectic");
   }
 
-  $scope.update_events_worker = function(cal) {
+  $scope.update_events_worker = function(cal, with_band) {
     var yesterday = new Date();
     yesterday.setDate(yesterday.getDate() - 1);
 
@@ -52,7 +52,7 @@ Controllers.controller('eventsController', function($scope, $http) {
       for (var i = 0; i < len; i++) {
         var item = calendar_data.items[i];
         var event = {
-          what: item.summary, why: item.description, where: item.location, 
+          what: item.summary, why: item.description, where: item.location, with_band: with_band,
           beg: new Date(item.start.dateTime), fin: new Date(item.end.dateTime)
         };
 

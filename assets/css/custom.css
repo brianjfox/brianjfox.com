@@ -1335,6 +1335,7 @@ ul.events-list { list-style-type: none; }
 ul.events-list > li { margin-bottom: 20px; }
 ul.events-list > li.bar-left { border-left: 2px solid white; }
 .events-list .what { font-size: 120%; font-weight: bold; cursor: pointer; display: block; background: rgba(9,29,73,0.97); padding: 5px 10px;  }
+.events-list .with { font-style: italic; }
 .events-list .why { display: block; }
 .events-list .where { cursor: pointer; }
 .events-list .map-link { font-style: italic; font-size: 90%; cursor: pointer; }

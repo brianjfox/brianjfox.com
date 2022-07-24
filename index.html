@@ -25,6 +25,7 @@
 	  <li ng-repeat="event in events" class="list-item col-sm-12 bar-left">
 	    <img src="assets/images/{{ classname_for_date(event.beg) }}.png" ng-class="classname_for_date(event.beg)" />
 	    <span class="what" ng-click="more_info_or_go_there(event.where)" ng-bind="event.what"></span>
+	    <div class="with">(With <span class="with_band" ng-click="more_info_or_go_there(event.where)" ng-bind="event.with_band"></span>)</div>
 	    <span class="why" ng-bind="event.why"></span>
 
 	    <div class="when">
